@@ -41,7 +41,7 @@ jobs:
           os: ubuntu-20.04
           rust: stable
           target: i686-unknown-linux-gnu
-          cross: false
+          cross: true
 
         - build: x86_64-macos
           os: macos-latest
