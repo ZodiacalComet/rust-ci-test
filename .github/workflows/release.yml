@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false # don't fail other jobs if one fails
       matrix:
-        build: [x86_64-linux, aarch64-linux, i686-linux, x86_64-macos, x86_64-windows, win32-msvc] # , x86_64-win-gnu
+        build: [x86_64-linux, aarch64-linux, i686-linux, x86_64-macos, x86_64-windows, win32-windows] # , x86_64-win-gnu
         include:
 
         - build: x86_64-linux
@@ -60,7 +60,7 @@ jobs:
         #   rust: stable-x86_64-gnu
         #   target: x86_64-pc-windows-gnu
 
-        - build: win32-msvc
+        - build: win32-windows
           os: windows-2019
           rust: stable
           target: i686-pc-windows-msvc
@@ -158,7 +158,7 @@ jobs:
 
           for dir in bins-* ; do
               platform=${dir#"bins-"}
-              if [[ $platform =~ "win" ]]; then
+              if [[ $platform =~ "windows" ]]; then
                   exe=".exe"
               fi
               pkgname=$PROJECT_NAME-$TAG-$platform
