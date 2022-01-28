@@ -8,6 +8,10 @@ on:
     - 'v[0-9]+.[0-9]+.[0-9]+'
     ## - release
 
+env:
+  BIN_NAME: rust-ci-test
+  PROJECT_NAME: rust-ci-test
+
 jobs:
   dist:
     name: Dist
